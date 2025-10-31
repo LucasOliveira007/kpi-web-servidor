@@ -1,0 +1,219 @@
+html,body {
+    height: 220vh;
+    width: 220vw;
+    margin: 0;
+    padding: 3px 5px;
+    overflow: scroll;
+
+}
+
+
+/* texto do incio (KPIs)*/
+
+.textoInicio{
+padding: 5px 0;
+width: 77%;
+color: #ffffff;
+font-weight: bold;
+background-color: #057c29;
+font-size: 25px;
+white-space: nowrap;
+}
+
+/* Nome vendedor no relatorio*/
+.info-usuario {
+    white-space: nowrap;      /* Impede quebra de linha */
+    overflow: hidden;         /* Esconde o excesso de texto */
+    text-overflow: ellipsis;  /* Adiciona "..." se for muito longo */
+    max-width: 100%;          /* Impede que ultrapasse o container */
+    font-weight: bold;
+    margin-bottom: 10px;
+
+}
+
+/* cabeçalhos das tabelas*/
+table thead tr {           
+    background-color: #3b3d3b;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+/*Referente aos botoes de ações*/
+.containerBtn{
+    display: flex; /* Exibe os elementos filhos lado a lado */
+    gap: 10px; /* Espaço entre as tabelas */
+ }
+
+
+/* os textos da Tabela das marcas*/
+.resultado{
+    white-space: nowrap;
+    border-collapse: collapse;
+}
+
+/*linhas da tabela das marcas*/
+.resultado th, .resultado td {
+  border: 1px solid #000000;
+}
+
+/* texto da Tabela resumo ( Parte de baixo )*/
+
+.resultado2, .resultado3 {
+    white-space: nowrap;
+    border-collapse: collapse;
+    
+}
+   /* uniao tabela resumo e tabela totais*/
+  .caixa-tabelas{
+    display: flex; /* Exibe os elementos filhos lado a lado */
+    gap: 10px; /* Espaço entre as tabelas */
+        
+}    
+
+/*texto abaixo tabela resumo*/
+.legendasCabecalhoBaixo{
+    display: inline-block;
+    margin: -150px 0;
+    font-size: 11px;
+    color: rgb(163, 19, 19);
+ }
+
+ /*texto do cabeçalho das tabelas*/
+.cabecalho1, .cabecalho2, .cabecalho3{
+    font-size: 75%;
+  
+}      
+ 
+
+/* Estilos gerais para a tabela */
+table {
+    width: 0%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+}
+ 
+ /* linhas das grades do cabeçalho*/
+table th, table td {        
+    border: 1px solid #000000;
+    padding: 8px;
+}
+
+/* linhas das grades da tabela */ 
+table td {                     
+    border: 1px solid #dddddd; 
+    padding: 8px;
+    white-space: nowrap;
+}
+
+ /* linhas pares da tabela */
+
+table tbody tr:nth-child(even) {  
+    background-color: #e2e2e2;
+}
+
+
+/* Estilo para botões */
+button {
+    background-color: #057c29;
+    color: white;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+}
+
+/* Estilo para a linha pontilhada */
+.linhaAbaixoBtn {
+    display: flex;
+    transform: translate(0px, -25px);
+    width: 100%;
+    border-bottom: 2px dashed #02000a; /* Linha pontilhada */
+    margin-top: 10px; /* Espaçamento entre os botões e a linha pontilhada */
+}
+
+
+/* A caixa de texto que filtra a data */
+#dataFiltro{
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #c2c2c2;
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+    border-radius: 10px;
+    display: block;
+}
+
+/* Texto dentro da caixa de texto*/
+.caixaData{
+color: rgb(224, 224, 224);
+  font-size: 15px; 
+  
+}
+
+
+/* Configurações para telas menores*/
+
+@media (min-width: 344px) and (max-width: 853px) {
+
+    
+
+        button {
+            background-color: #057c29;
+            color: white;
+            padding: 10px 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            display: inline-block;
+        }
+    
+
+
+         /* Estilo para a linha pontilhada */
+      .linhaAbaixoBtn {
+          display: flex;
+          transform: translate(0px, -25px);
+          width: 200%;
+          border-bottom: 2px dashed #02000a; /* Linha pontilhada */
+          margin-top: 10px; /* Espaçamento entre os botões e a linha pontilhada */
+         }
+
+    .textoInicio{
+        padding: 5px 0;
+        width: 100%;
+        color: #ffffff;
+        font-weight: bold;
+        background-color: #057c29;
+        font-size: 14px;
+        white-space: nowrap;
+        }
+    /*texto abaixo tabela resumo*/
+    .legendasCabecalhoBaixo{
+    display: inline-block;
+    
+    font-size: 9px;
+    color: rgb(163, 19, 19);
+ }
+  
+/* Nome vendedor no relatorio*/
+.info-usuario {
+    font-size: small;
+    white-space: nowrap;      /* Impede quebra de linha */
+    overflow: hidden;         /* Esconde o excesso de texto */
+    text-overflow: ellipsis;  /* Adiciona "..." se for muito longo */
+    max-width: 100%;          /* Impede que ultrapasse o container */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+}
+
