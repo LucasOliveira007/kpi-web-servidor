@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+  <title>Gerador de Relatórios KPI</title>
+</head>
+<body>
+
+  <div class="textoInicio">
+    <label class="nomeData" for="dataFiltro">KPI's WEB GMF DISTRIBUIDORA (VENDEDORES)</label>
+  </div> 
+  
+  <div class="containerBtn">
+   
+   <select id="dataFiltro">
+    <option class="caixaData" value="" disabled selected>Selecione Uma Data</option>
+    </select>
+    <button id="gerarRelatorio">Gerar Relatório</button>
+    <button id="btnBaixarPDF">Baixar PDF</button>
+    <button id="logoutButton">Sair</button>
+  </div>
+
+  <div class="linhaAbaixoBtn"></div>
+
+  <div id="relatorio">
+    <div id="infoUsuarioLogado" class="info-usuario"></div>
+    <p id="dataArquivo" style="margin: 10px 0; font-style: italic;"></p>
+
+    
+
+    <!-- Tabela do resumo-->
+   <div class="caixa-tabelas">
+   <table class="resultado2">
+    <thead>
+      <tr class="cabecalho2">
+        <th>(*)</th>
+        <th>INDICADORES</th>
+        <th>PREVISTO</th>
+        <th>VENDIDO</th>
+        <th>FATURADO</th>
+        <th>DEVOLVIDO</th>
+        <th>LIQUIDO</th>
+        <th>%META</th>
+        <th>BASE</th>
+        <th>POR ESCALA</th>
+        <th>TOTAL</th>
+
+     </tr>
+    </thead>
+    <tbody id="tabelaResultados2">
+      <!-- Dados gerados dinamicamente -->
+    </tbody>
+  </table>
+   
+<!-- Tabela do ganho -->
+<table class="resultado3">
+  <thead>
+    <tr class="cabecalho3" >
+      
+      <th>TOTAL DOS GANHOS</th>
+      <th>GANHOS TOTAIS</th>
+    
+    </tr>
+  </thead>
+  <tbody id="tabelaResultados3">
+    <!-- Dados gerados dinamicamente -->
+  </tbody>
+</table>
+
+</div>
+ 
+<span class="legendasCabecalhoBaixo">
+  <p class="legendaCabecalhoParteBaixo1">Fat./Qtd. = (*) 90% a 99,98% = 0,10% / 99,99% a 109,98% = 0,20% / 109,99% acima = 0,30% </p>
+  <p class="legendaCabecalhoParteBaixo2"> Positivação = Esse número refere-se a 85% de sua carteira</p>
+</span>
+
+
+ 
+ <!-- Tabela das marcas-->
+    <table class="resultado">
+      <thead>
+        <tr class="cabecalho1">
+          <th>COD.M</th> 
+          <th>MARCA</th>
+          <th>META.POS</th>
+          <th>VL.POS</th>
+          <th>%POS</th>
+          <th>META.FAT</th>
+          <th>VL.FAT.LIQ</th>
+          <th>%FAT</th>
+          <th>META.QTD</th>
+          <th>VL.QTD</th>
+          <th>%QTD</th>
+          <th>GANHO.POS</th>
+          <th>GANHO.FAT</th>
+          <th>GANHO.QTD</th> 
+        </tr>
+      </thead>
+      <tbody id="tabelaResultados">
+        <!-- Dados gerados dinamicamente -->
+      </tbody>
+    </table>
+
+
+</div>
+</body>
+</html>
