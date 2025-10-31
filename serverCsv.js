@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Caminho da pasta onde os arquivos permanecem
-const pastaEntrada = 'F:\\Meus Arquivos Para WEB\\Projeto Kpi GMF\\Kpi Web Servidor Fisico\\entradaDados';
+const pastaEntrada = path.join(__dirname, 'entradaDados');
 
 // Caminhos dos arquivos diretamente na pasta de entrada
 const filePathCsv = path.join(pastaEntrada, 'dados_kpi.csv');
@@ -112,3 +112,4 @@ app.get('/datas', (req, res) => {
 app.listen(port, () => {
   console.log(`🚀 Servidor rodando na porta ${port}`);
 });
+
