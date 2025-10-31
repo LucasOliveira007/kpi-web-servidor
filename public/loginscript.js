@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            fetch('http://localhost:3000/login', {
+            fetch('https://kpi-web-servidor.onrender.com/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ codigo, senha })
@@ -47,3 +47,4 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
