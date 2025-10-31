@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         try {
-            const resposta = await fetch(`http://localhost:3000/dados?data=${dataSelecionada}&vendedor=${codigo}`);
+            const resposta = await fetch(`https://kpi-web-servidor.onrender.com/dados?data=${dataSelecionada}&vendedor=${codigo}`);
             if (!resposta.ok) {
                 throw new Error("Erro na resposta da API.");
             }
@@ -305,4 +305,5 @@ document.addEventListener('DOMContentLoaded', async () => {
         window.location.replace('login.html');
     });
 });
+
 
