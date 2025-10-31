@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        const response = await fetch(`http://localhost:3000/datas?vendedor=${codigo}`);
+        const response = await fetch(`https://kpi-web-servidor.onrender.com/datas?vendedor=${codigo}`);
         if (!response.ok) {
             throw new Error("Erro ao carregar as datas.");
         }
@@ -305,3 +305,4 @@ document.addEventListener('DOMContentLoaded', async () => {
         window.location.replace('login.html');
     });
 });
+
