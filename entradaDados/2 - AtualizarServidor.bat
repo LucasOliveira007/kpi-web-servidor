@@ -1,7 +1,7 @@
 @echo off
 echo 🔄 Forçando atualização no Render...
 
-curl -X GET "https://api.render.com/deploy/srv-4O2n5pmp0n3Kbcx2f96NqEJg?key=HfuMRQb4R9"
+curl -X GET "https://api.render.com/deploy/srv-d421np3ipnbc73bva950?key=2VF3etWgk40"
 
 echo ✅ Deploy disparado com sucesso!
 pause
