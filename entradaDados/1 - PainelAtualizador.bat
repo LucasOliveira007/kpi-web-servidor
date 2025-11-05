@@ -2,16 +2,16 @@
 title Painel Git - Compartilhado
 color 0B
 
-REM Detecta o usu√°rio atual
+REM Detecta o usu·rio atual
 set "user=%USERNAME%"
 
-REM Define o caminho do reposit√≥rio conforme o usu√°rio
+REM Define o caminho do repositÛrio conforme o usu·rio
 if "%user%"=="Lucas" (
     set "repoPath=C:\Users\GMF\Meu Drive\Kpi_Web_Atualizador"
 ) else if "%user%"=="Suelen" (
     set "repoPath=C:\Users\Suelen\Meu Drive\KpiWeb"
 ) else (
-    echo ‚ùå Usu√°rio n√£o reconhecido: %user%
+    echo ? Usu·rio n„o reconhecido: %user%
     echo Adicione o caminho correspondente no script.
     goto fim
 )
@@ -19,54 +19,54 @@ if "%user%"=="Lucas" (
 REM Verifica se o caminho existe
 if not exist "%repoPath%" (
     echo.
-    echo ‚ùå Caminho "%repoPath%" n√£o encontrado!
-    echo Verifique se o Google Drive est√° sincronizado corretamente.
+    echo ? Caminho "%repoPath%" n„o encontrado!
+    echo Verifique se o Google Drive est· sincronizado corretamente.
     goto fim
 )
 
 cd /d "%repoPath%"
 git config --global --add safe.directory "%repoPath%"
 
-REM Verifica se √© um reposit√≥rio Git
+REM Verifica se È um repositÛrio Git
 if not exist "%repoPath%\.git" (
     echo.
-    echo ‚ùå Esta pasta n√£o √© um reposit√≥rio Git.
+    echo ? Esta pasta n„o È um repositÛrio Git.
     echo Execute 'git init' e conecte ao GitHub antes de usar este painel.
     goto fim
 )
 
 :menu
 cls
-echo üìä Painel Git - %user%
+echo Painel Git - %user%
 echo.
-echo 1 - üîÑ Sincronizar reposit√≥rio
-echo 2 - üöÄ Enviar entradaDados para o GitHub
+echo 1 - Sincronizar repositÛrio
+echo 2 - Enviar entradaDados para o GitHub
 echo.
-set /p choice=Escolha uma op√ß√£o (1 ou 2): 
+set /p choice=Escolha uma opÁ„o (1 ou 2): 
 
 if "%choice%"=="1" (
     echo.
-    echo üîÑ Sincronizando reposit√≥rio com o GitHub...
+    echo Sincronizando repositÛrio com o GitHub...
     git pull origin main --allow-unrelated-histories
     echo.
-    echo ‚úÖ Reposit√≥rio sincronizado com sucesso!
+    echo RepositÛrio sincronizado com sucesso!
     goto fim
 )
 
 if "%choice%"=="2" (
     echo.
-    echo üöÄ Enviando pasta entradaDados para o GitHub...
+    echo Enviando pasta entradaDados para o GitHub...
     git pull origin main --allow-unrelated-histories
     git add entradaDados
-    git commit -m "Atualiza√ß√£o da pasta entradaDados via .bat (%user%)"
+    git commit -m "AtualizaÁ„o da pasta entradaDados via .bat (%user%)"
     git push origin main
     echo.
-    echo ‚úÖ Pasta entradaDados enviada com sucesso!
+    echo Pasta entradaDados enviada com sucesso!
     goto fim
 )
 
 echo.
-echo ‚ùå Op√ß√£o inv√°lida. Execute novamente e escolha 1 ou 2.
+echo OpÁ„o inv·lida. Execute novamente e escolha 1 ou 2.
 
 :fim
 echo.
