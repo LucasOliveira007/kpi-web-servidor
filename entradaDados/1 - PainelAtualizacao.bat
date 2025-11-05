@@ -1,8 +1,20 @@
 @echo off
-title Painel Git - Suelen
+title Painel Git - Compartilhado
 color 0B
 
-set "repoPath=C:\Users\GMF\Meu Drive\Kpi_Web_Atualizador"
+REM Detecta o usuário atual
+set "user=%USERNAME%"
+
+REM Define o caminho do repositório conforme o usuário
+if "%user%"=="Lucas" (
+    set "repoPath=C:\Users\GMF\Meu Drive\Kpi_Web_Atualizador"
+) else if "%user%"=="Suelen" (
+    set "repoPath=C:\Users\Suelen\Meu Drive\KpiWeb"
+) else (
+    echo ❌ Usuário não reconhecido: %user%
+    echo Adicione o caminho correspondente no script.
+    goto fim
+)
 
 REM Verifica se o caminho existe
 if not exist "%repoPath%" (
@@ -15,9 +27,17 @@ if not exist "%repoPath%" (
 cd /d "%repoPath%"
 git config --global --add safe.directory "%repoPath%"
 
+REM Verifica se é um repositório Git
+if not exist "%repoPath%\.git" (
+    echo.
+    echo ❌ Esta pasta não é um repositório Git.
+    echo Execute 'git init' e conecte ao GitHub antes de usar este painel.
+    goto fim
+)
+
 :menu
 cls
-echo 📊 Painel Git - Suelen
+echo 📊 Painel Git - %user%
 echo.
 echo 1 - 🔄 Sincronizar repositório
 echo 2 - 🚀 Enviar entradaDados para o GitHub
@@ -38,7 +58,7 @@ if "%choice%"=="2" (
     echo 🚀 Enviando pasta entradaDados para o GitHub...
     git pull origin main --allow-unrelated-histories
     git add entradaDados
-    git commit -m "Atualização da pasta entradaDados via .bat"
+    git commit -m "Atualização da pasta entradaDados via .bat (%user%)"
     git push origin main
     echo.
     echo ✅ Pasta entradaDados enviada com sucesso!
@@ -47,7 +67,6 @@ if "%choice%"=="2" (
 
 echo.
 echo ❌ Opção inválida. Execute novamente e escolha 1 ou 2.
-goto fim
 
 :fim
 echo.
